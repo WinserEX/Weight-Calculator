@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container, .title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+div.container > input {
+    border-radius: 30px;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+button {
+    border-radius: 30px;
+    margin-bottom: 5px;
+}
+
