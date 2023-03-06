@@ -13,14 +13,14 @@ document.querySelector(".btn").addEventListener("click", function(event){
     let valCol = document.querySelector(".valCol");
     let p1 = document.createElement("p");
     let p2 = document.createElement("p");
+
+    let testP2 = p2.hasChildNodes(); 
+    console.log(testP2);
     
-    if (valNum.hasChildNodes() == true || valCol.hasChildNodes() == true) {
-        while (valNum.firstChild) {
-            valNum.removeChild(valNum.firstChild);
-        }
-        while (valCol.firstChild) {
-            valCol.removeChild(valCol.firstChild);
-        }
+    if (p2.hasChildNodes()) {
+        valNum.removeChild(valNum.childNodes[0]);
+        valCol.removeChild(valCol.childNodes[0]);
+        console.log("Has child nodes")
     } else {
         console.log("No child nodes")
     }
@@ -33,6 +33,8 @@ document.querySelector(".btn").addEventListener("click", function(event){
     }
     valNum.append(p1);
     valCol.append(p2);
+    console.log(testP2);
+
     num.value = null;
     nombre.value = "";
   });
