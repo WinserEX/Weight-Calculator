@@ -13,15 +13,19 @@
     </head>
     <body>
         <h1 class="title">Convertir Libras a Kilogramos</h1>
+
         <form>
-            <div class="container">
-                <label target="num">Libras</label>
-                <input class="num"  type="number" name="num">
-                <label target="nombre">Nombre</label>
-                <input class="nombre" type="text" name="nombre">
-                <button class="btn" type="submit">Convertir</button>
+            <div class="mb-3">
+                <label for="num">Libras</label>
+                <input class="num" type="number" name="num">
             </div>
+            <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input class="nombre" type="text" name="nombre">
+            </div>
+            <button class="btn btn-primary" type="submit">Convertir</button>
         </form>
+
         <div class="container">
             <h2>Conversión</h2>
             <p class="valNum"></p>
