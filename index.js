@@ -11,19 +11,28 @@ document.querySelector(".btn").addEventListener("click", function(event){
     let nombre = document.querySelector(".nombre");
     let valNum = document.querySelector(".valNum");
     let valCol = document.querySelector(".valCol");
+    let p1 = document.createElement("p");
+    let p2 = document.createElement("p");
+    
     if (valNum.hasChildNodes() == true || valCol.hasChildNodes() == true) {
-        valNum.removeChild(valNum.childNodes[0])
-        valCol.removeChild(valCol.childNodes[0])
+        while (valNum.firstChild) {
+            valNum.removeChild(valNum.firstChild);
+        }
+        while (valCol.firstChild) {
+            valCol.removeChild(valCol.firstChild);
+        }
     } else {
         console.log("No child nodes")
     }
-    valNum.append(`${num.value} lbs son ${lbsKgs(num.value)}`);
+    p1.append(`${num.value} lbs son ${lbsKgs(num.value)}`);
     if (num.value > 250) {
-        valCol.append(`${nombre.value}, si este es tu peso lo mejor es que cuides más tu salud.`);
+        p2.append(`${nombre.value}, si este es tu peso lo mejor es que cuides más tu salud.`);
     } 
     else {
-        valCol.append(`Gracias por usar este convertidor ${nombre.value}`);
+        p2.append(`Gracias por usar este convertidor ${nombre.value}`);
     }
+    valNum.append(p1);
+    valCol.append(p2);
     num.value = null;
     nombre.value = "";
   });
