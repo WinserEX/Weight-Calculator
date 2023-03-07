@@ -3,8 +3,13 @@ let lbsKgs = (x) => {
     return `${res} Kg`;          
 }
 
+let kgLbs = (x) => {
+    res = x * 2.20462;
+    return `${res} Lbs`
+}
+
 let con = document.querySelector('.container')
-document.querySelector(".btn").addEventListener("click", function(event){
+document.querySelector(".submit").addEventListener("click", function(event){
     event.preventDefault()
     //Query Selectors
     let num = document.querySelector(".num");
