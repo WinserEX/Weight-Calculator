@@ -67,8 +67,8 @@ document.querySelector(".btn").addEventListener("click", function(event){
         valNum.append(divSuccess);
     } 
     else {
-        divWarning.append(`Por favor agrega la medida para poder convertirla`);
-        valNum.append(divWarning);
+        divAlert.append(`Por favor agrega la medida para poder convertirla`);
+        valNum.append(divAlert);
     }
 
     if (num.value > 250 && nombre.value != "") {
@@ -82,7 +82,6 @@ document.querySelector(".btn").addEventListener("click", function(event){
     else {
         divSuccess2.append(`Gracias por usar este convertidor ${nombre.value}`);
         valCol.append(divSuccess2);
-
     }
     num.value = 0;
     nombre.value = "";
