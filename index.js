@@ -4,25 +4,15 @@ let lbsKgs = (x) => {
     return `${res} Kg`;          
 }
 
-function validateForm() {
-    let x = document.forms["myForm"]["num"].value;
-    let y = document.forms["myForm"]["nombre"].value;
-    if (x == "" || y == "") {
-      alert("Los campos no pueden estar en blanco");
-      return false;
-    }
-}
-
 let con = document.querySelector('.container')
 document.querySelector(".btn").addEventListener("click", function(event){
     event.preventDefault()
-
-    validateForm();
 
     let num = document.querySelector(".num");
     let nombre = document.querySelector(".nombre");
     let valNum = document.querySelector(".valNum");
     let valCol = document.querySelector(".valCol");
+
     //test 1
     console.log(`Num has child: ${valNum.hasChildNodes()}`)
     console.log(`Name has child: ${valCol.hasChildNodes()}`)
