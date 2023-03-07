@@ -1,6 +1,5 @@
 let lbsKgs = (x) => {
-    kg = 0.453592
-    res = x * kg
+    res = x * 0.453592
     return `${res} Kg`;          
 }
 
