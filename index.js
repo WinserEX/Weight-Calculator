@@ -1,16 +1,6 @@
 let lbsKgs = (x) => {
-    kg = 0.453592
-    res = x * kg
+    res = x * 0.453592
     return `${res} Kg`;          
-}
-
-function validateForm() {
-    let x = document.forms["myForm"]["num"].value;
-    let y = document.forms["myForm"]["nombre"].value;
-    if (x == "" || y == "") {
-      alert("Los campos no pueden estar en blanco");
-      return false;
-    }
 }
 
 let con = document.querySelector('.container')
@@ -78,10 +68,11 @@ document.querySelector(".btn").addEventListener("click", function(event){
         valNum.append(divSuccess);
     } 
     else if (nombre.value == "") {
-        valCol.append(`Agrega tu nombre por favor`);
+        divWarning.append(`Por favor agrega la medida para poder convertirla.`);
+        valNum.append(divWarning)
     }
     else {
-        divAlert.append(`Por favor agrega la medida para poder convertirla`);
+        divAlert.append(`${nombre.value}, no olvides agregar la medida para poder convertirla.`);
         valNum.append(divAlert);
     }
 
