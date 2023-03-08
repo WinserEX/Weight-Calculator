@@ -3,15 +3,50 @@ let lbsKgs = (x) => {
     return `${res} Kg`;          
 }
 
+let kgLbs = (x) => {
+    res = x * 2.20462;
+    return `${res} Lbs`
+}
+
+//dropdown cross value
+
+let dropA = document.querySelector("#drop1")
+let dropB = document.querySelector("#drop2")
+
+document.querySelector("#drop1").addEventListener("mouseout", function(event){
+    if (dropA.value == "Lbs") {
+        dropB.value = "Kgs";
+    } else if (dropA.value == "Kgs") {
+        dropB.value = "Lbs";
+    }
+    console.log('mouseout');
+})
+
 let con = document.querySelector('.container')
-document.querySelector(".btn").addEventListener("click", function(event){
+document.querySelector(".submit").addEventListener("click", function(event){
     event.preventDefault()
     //Query Selectors
+    let drop1 = document.querySelector(".drop1")
+    let drop2 = document.querySelector(".drop2")
     let num = document.querySelector(".num");
     let nombre = document.querySelector(".nombre");
     let valNum = document.querySelector(".valNum");
     let valCol = document.querySelector(".valCol");
 
+    //Conversion logic
+    let calculation = 0;
+    if (drop1.value == "Lbs" && drop2.value == "Kgs") {
+        calculation = lbsKgs(num.value);
+    }
+    else if (drop1.value == "Kgs" && drop2.value == "Lbs") {
+        calculation = kgLbs(num.value);
+    }
+    else if (drop1.value == drop2.value) {
+        calculation = `${num.value} ${drop2.value}`;
+    } 
+    else {
+        alert("Edge Case!!!")
+    }
 
     //Create
         //Success
@@ -64,7 +99,7 @@ document.querySelector(".btn").addEventListener("click", function(event){
     }
     //Appends
     if (num.value != 0) {
-        divSuccess.append(`${num.value} lbs son ${lbsKgs(num.value)}`);
+        divSuccess.append(`${num.value} ${drop1.value} son ${calculation}`);
         valNum.append(divSuccess);
     } 
     else if (nombre.value == "") {
