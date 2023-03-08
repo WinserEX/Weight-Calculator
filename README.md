@@ -1,6 +1,6 @@
 # Weight-Calculator
 
-This will be a measurement conversion app built with vanilla JavaScript that will allow users to easily convert different types of units, including length, weight, temperature, and volume. It's a simple and intuitive tool that can come in handy for anyone who needs to convert units regularly.
+This measurement conversion app was built with vanilla JavaScript and it will allow users to easily convert different types of units, including length, weight, temperature, and volume. It's a simple and intuitive tool that can come in handy for anyone who needs to convert units regularly.
 
 Future Features:
 
